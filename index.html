@@ -17,28 +17,13 @@
     <meta name="theme-color" content="#2e8b57">
     
     <!-- Apple Touch Icons (iOS) -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" href="icon-512x512.png">
     
     <!-- Android & Favicon -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Windows Metro -->
-    <meta name="msapplication-TileColor" content="#2e8b57">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <link rel="icon" type="image/png" href="icon-512x512.png">
     
     <!-- Manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     
     <!-- External Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -81,7 +66,6 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             height: 60px;
-            -webkit-app-region: drag;
         }
         
         .banner-title {
@@ -115,7 +99,6 @@
             box-shadow: 0 0 0 3px #2196F3, 0 8px 25px rgba(0,0,0,0.3);
             animation: pulse 2s infinite;
             z-index: 1001;
-            -webkit-app-region: no-drag;
         }
         
         @keyframes pulse {
@@ -1453,7 +1436,7 @@
             // Register Service Worker
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/sw.js')
+                    navigator.serviceWorker.register('sw.js')
                         .then(registration => {
                             console.log('Service Worker registered with scope:', registration.scope);
                         })
