@@ -1,0 +1,15 @@
+{
+  "name": "Kuwait Zoo",
+  "short_name": "Kuwait Zoo",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#2e8b57",
+  "background_color": "#2e8b57",
+  "icons": [
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
