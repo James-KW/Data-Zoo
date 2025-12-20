@@ -14,9 +14,9 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="theme-color" content="#E07A5F"> <!-- Desert sandy orange for splash & status bar -->
-    
-    <!-- Icons (PWA, Android, iOS) -->
+    <meta name="theme-color" content="#E07A5F"> <!-- Desert sandy orange -->
+
+    <!-- Icons (icons folder use করা) -->
     <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
     <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
@@ -837,7 +837,6 @@
         .heart-3 { bottom: 20px; left: 20px; animation-delay: 1s; }
         .heart-4 { bottom: 20px; right: 20px; animation-delay: 1.5s; }
         
-        /* Dataset note */
         .dataset-note {
             text-align: center;
             font-size: 16px;
@@ -853,7 +852,6 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
         
-        /* Install Button */
         .install-btn {
             position: fixed;
             bottom: 80px;
@@ -1147,7 +1145,6 @@
             </div>
         </div>
         
-        <!-- A4 পেজের বাইরে নিচে লেখা -->
         <div class="dataset-note">
             🐒🦍 Chimpanzee & Monkey Behavioral, Ecological, And Biological Dataset.<br>
             📊 Observational Data · Individual Records · Codebook. 🌿<br>
@@ -1160,7 +1157,6 @@
     </div>
     
     <script>
-        // PWA Installation Variables
         let deferredPrompt;
         
         const videoSources = [
@@ -1176,7 +1172,6 @@
         let selectedRating = 0;
         
         document.addEventListener('DOMContentLoaded', function() {
-            // Set current date
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const today = new Date();
             const formattedDate = today.toLocaleDateString('en-US', options);
@@ -1184,10 +1179,8 @@
             document.getElementById('current-date').textContent = formattedDate;
             document.getElementById('footer-date').textContent = formattedDate;
             
-            // Load video
             setTimeout(() => loadVideo(currentVideoIndex), 100);
             
-            // Make all editable elements read-only
             document.querySelectorAll('.editable, [contenteditable="true"]').forEach(el => {
                 el.setAttribute('contenteditable', 'false');
                 el.style.cursor = 'default';
@@ -1198,7 +1191,6 @@
                 });
             });
             
-            // Enable/disable buttons appropriately
             document.querySelectorAll('button').forEach(btn => {
                 if (btn.classList.contains('video-control-btn') || 
                     btn.classList.contains('action-btn') || 
@@ -1217,7 +1209,6 @@
                 }
             });
             
-            // Handle flower image error
             const flowerImg = document.querySelector('.round-flower-image');
             if (flowerImg) {
                 flowerImg.addEventListener('error', function() {
@@ -1225,7 +1216,6 @@
                 });
             }
             
-            // Rating system
             document.getElementById('rate-btn').addEventListener('click', function() {
                 const ratingModal = document.getElementById('rating-modal');
                 ratingModal.style.display = ratingModal.style.display === 'block' ? 'none' : 'block';
@@ -1268,16 +1258,13 @@
                 }
             });
             
-            // PWA Installation Logic
             window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
                 deferredPrompt = e;
                 
-                // Show install button
                 const installButton = document.getElementById('installButton');
                 installButton.style.display = 'flex';
                 
-                // Hide install button if app is already installed
                 if (window.matchMedia('(display-mode: standalone)').matches) {
                     installButton.style.display = 'none';
                 }
@@ -1297,13 +1284,10 @@
                 }
             });
             
-            // Check if app is already installed
             if (window.matchMedia('(display-mode: standalone)').matches) {
-                console.log('App is running in standalone mode');
                 document.getElementById('installButton').style.display = 'none';
             }
             
-            // Register Service Worker
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('sw.js')
@@ -1316,11 +1300,9 @@
                 });
             }
             
-            // Prevent drag and drop
             document.addEventListener('dragstart', e => e.preventDefault());
             document.addEventListener('drop', e => e.preventDefault());
             
-            // Prevent context menu
             document.addEventListener('contextmenu', e => {
                 if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
                     e.preventDefault();
