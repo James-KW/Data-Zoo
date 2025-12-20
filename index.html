@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1100">
     <title>Kuwait Zoo - Monkey Population 2025 (Public View)</title>
     
     <!-- PWA Meta Tags -->
@@ -50,6 +50,8 @@
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             user-select: none;
+            min-width: 1100px;
+            overflow-x: auto;
         }
         
         .public-banner {
@@ -125,7 +127,6 @@
             position: fixed;
             left: 0;
             top: 60px;
-            overflow-y: auto;
         }
         
         .panel-header {
@@ -877,283 +878,10 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 87, 34, 0.6);
         }
-        
-        /* ==================== MOBILE FIXES ==================== */
-        
-        /* Mobile - Tablet (768px and below) */
-        @media screen and (max-width: 768px) {
-            .side-panel {
-                width: 100%;
-                position: fixed;
-                left: 0;
-                top: 60px;
-                height: auto;
-                max-height: 70vh;
-                overflow-y: auto;
-                z-index: 999;
-                display: none; /* Hidden by default */
-                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            }
-            
-            .side-panel.active {
-                display: flex;
-            }
-            
-            .main-content-area {
-                margin-left: 0;
-                padding: 20px;
-                margin-top: 60px;
-                width: 100%;
-            }
-            
-            .a4-container {
-                width: 100%;
-                padding: 15px;
-                margin-top: 20px;
-                box-shadow: none;
-            }
-            
-            .document-content {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .flower-section {
-                position: relative;
-                width: 100%;
-                top: 0;
-                left: 0;
-                transform: none;
-                margin: 10px 0 20px 0;
-                padding: 10px;
-                min-height: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .flower-image-container {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-            
-            .round-flower-image {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .flower-text-container {
-                max-width: 100%;
-                text-align: center;
-            }
-            
-            .flower-caption {
-                font-size: 20px;
-            }
-            
-            .flower-subtitle {
-                font-size: 14px;
-            }
-            
-            .video-intro {
-                height: 180px;
-            }
-            
-            .welcome-text h1 {
-                font-size: 20px;
-            }
-            
-            .welcome-text p {
-                font-size: 14px;
-            }
-            
-            .video-control-btn {
-                padding: 8px 15px;
-                font-size: 14px;
-            }
-            
-            .card {
-                min-height: auto;
-                padding: 15px;
-            }
-            
-            .table-wrapper {
-                overflow-x: scroll;
-            }
-            
-            .species-name {
-                min-width: 150px;
-            }
-            
-            .dataset-note {
-                width: 100%;
-                padding: 15px;
-                font-size: 14px;
-                margin: 30px 0;
-            }
-            
-            .install-btn {
-                bottom: 70px;
-                right: 15px;
-                font-size: 14px;
-                padding: 10px 15px;
-            }
-            
-            .admin-panel-btn {
-                font-size: 14px;
-                padding: 8px 12px;
-            }
-            
-            /* Mobile menu toggle button */
-            .mobile-menu-toggle {
-                position: fixed;
-                top: 15px;
-                left: 15px;
-                background: rgba(255, 255, 255, 0.2);
-                color: white;
-                border: none;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 20px;
-                cursor: pointer;
-                z-index: 1001;
-                backdrop-filter: blur(5px);
-            }
-        }
-        
-        /* Small Mobile (480px and below) */
-        @media screen and (max-width: 480px) {
-            .public-banner {
-                padding: 8px 15px;
-                height: 50px;
-            }
-            
-            .banner-title {
-                font-size: 14px;
-            }
-            
-            .mobile-menu-toggle {
-                top: 10px;
-                left: 10px;
-                width: 35px;
-                height: 35px;
-            }
-            
-            .main-content-area {
-                padding: 10px;
-            }
-            
-            .a4-container {
-                padding: 10px;
-            }
-            
-            .header-content h1 {
-                font-size: 18px;
-            }
-            
-            .card h2 {
-                font-size: 14px;
-            }
-            
-            .table-editable {
-                font-size: 12px;
-            }
-            
-            .table-editable th,
-            .table-editable td {
-                padding: 6px 4px;
-            }
-            
-            .stats-table th,
-            .stats-table td {
-                padding: 6px 4px;
-                font-size: 12px;
-            }
-            
-            .action-btn {
-                padding: 10px 15px;
-                font-size: 14px;
-            }
-            
-            .social-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
-            }
-            
-            .rate-btn {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-            
-            .public-footer {
-                font-size: 10px;
-                padding: 6px 10px;
-            }
-        }
-        
-        /* Desktop (769px and above) - Hide mobile menu button */
-        @media screen and (min-width: 769px) {
-            .mobile-menu-toggle {
-                display: none;
-            }
-            
-            .side-panel {
-                display: flex !important;
-            }
-        }
-        
-        /* Standalone App Styles */
-        @media (display-mode: standalone) {
-            .public-banner {
-                padding-top: env(safe-area-inset-top);
-                height: calc(60px + env(safe-area-inset-top));
-            }
-            
-            .side-panel {
-                top: calc(60px + env(safe-area-inset-top));
-                height: calc(100vh - 60px - env(safe-area-inset-top));
-            }
-            
-            .main-content-area {
-                margin-top: calc(60px + env(safe-area-inset-top));
-            }
-            
-            .install-btn {
-                display: none !important;
-            }
-            
-            @media screen and (max-width: 768px) {
-                .side-panel {
-                    top: calc(60px + env(safe-area-inset-top));
-                }
-            }
-        }
-        
-        /* iOS Specific */
-        @supports (-webkit-touch-callout: none) {
-            .side-panel {
-                height: -webkit-fill-available;
-            }
-            
-            .main-content-area {
-                min-height: -webkit-fill-available;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="public-banner">
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-toggle" id="mobileMenuToggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        
         <div class="banner-title">
             <i class="fas fa-eye"></i>
             <span>Public View - Read Only</span>
@@ -1170,7 +898,7 @@
         <i class="fas fa-user-shield"></i> ADMIN PANEL
     </a>
     
-    <div class="side-panel" id="sidePanel">
+    <div class="side-panel">
         <div class="side-panel-content">
             <div class="panel-header">
                 <h2><i class="fas fa-eye"></i> View Only Mode</h2>
@@ -1446,7 +1174,6 @@
         let currentVideoIndex = 0;
         let isMuted = true;
         let selectedRating = 0;
-        let isMobileMenuOpen = false;
         
         document.addEventListener('DOMContentLoaded', function() {
             // Set current date
@@ -1459,46 +1186,6 @@
             
             // Load video
             setTimeout(() => loadVideo(currentVideoIndex), 100);
-            
-            // Mobile Menu Toggle
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const sidePanel = document.getElementById('sidePanel');
-            
-            if (mobileMenuToggle && sidePanel) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    isMobileMenuOpen = !isMobileMenuOpen;
-                    if (isMobileMenuOpen) {
-                        sidePanel.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    } else {
-                        sidePanel.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (isMobileMenuOpen && 
-                        !sidePanel.contains(event.target) && 
-                        !mobileMenuToggle.contains(event.target)) {
-                        sidePanel.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                        isMobileMenuOpen = false;
-                    }
-                });
-            }
-            
-            // Auto hide menu on desktop
-            function checkScreenSize() {
-                if (window.innerWidth >= 769 && sidePanel) {
-                    sidePanel.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                    isMobileMenuOpen = false;
-                }
-            }
-            
-            window.addEventListener('resize', checkScreenSize);
-            checkScreenSize(); // Initial check
             
             // Make all editable elements read-only
             document.querySelectorAll('.editable, [contenteditable="true"]').forEach(el => {
@@ -1517,8 +1204,7 @@
                     btn.classList.contains('action-btn') || 
                     btn.id === 'rate-btn' || 
                     btn.id === 'send-rating' || 
-                    btn.id === 'installButton' ||
-                    btn.id === 'mobileMenuToggle') {
+                    btn.id === 'installButton') {
                     btn.disabled = false;
                     btn.style.cursor = 'pointer';
                     btn.style.opacity = '1';
@@ -1640,23 +1326,6 @@
                     e.preventDefault();
                 }
             });
-            
-            // Adjust flower section margin for mobile
-            function adjustFlowerSection() {
-                const flowerSection = document.querySelector('.flower-section');
-                const a4Container = document.querySelector('.a4-container');
-                
-                if (flowerSection && a4Container) {
-                    if (window.innerWidth <= 768) {
-                        a4Container.style.marginTop = '10px';
-                    } else {
-                        a4Container.style.marginTop = '200px';
-                    }
-                }
-            }
-            
-            window.addEventListener('resize', adjustFlowerSection);
-            adjustFlowerSection(); // Initial adjustment
         });
         
         function loadVideo(index) {
@@ -1701,23 +1370,6 @@
         
         function showVisitorInfo() {
             alert('👥 VISITOR INFORMATION\n\n🕒 Permanently Closed');
-        }
-        
-        // Handle app visibility changes
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                console.log('App is in background');
-            } else {
-                console.log('App is in foreground');
-            }
-        });
-        
-        // Prevent going back in standalone mode
-        if (window.matchMedia('(display-mode: standalone)').matches) {
-            window.history.pushState(null, null, window.location.href);
-            window.onpopstate = function() {
-                window.history.go(1);
-            };
         }
     </script>
 </body>
