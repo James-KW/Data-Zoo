@@ -92,21 +92,22 @@
         }
         
         .contact-section, .social-section, .coffee-section {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #2e8b57 0%, #1a6d38 100%);
             padding: 25px;
             border-radius: 15px;
-            border: 2px solid #eaeaea;
+            border: 2px solid #1a6d38;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .coffee-section {
-            grid-column: span 2; /* Makes it span both columns */
+            grid-column: span 2;
         }
         
         .section-title {
-            color: #2e8b57;
+            color: white;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #2e8b57;
+            border-bottom: 2px solid rgba(255,255,255,0.5);
             font-size: 22px;
             display: flex;
             align-items: center;
@@ -124,16 +125,18 @@
             align-items: center;
             gap: 15px;
             padding: 15px;
-            background: white;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
-            border: 1px solid #eaeaea;
+            border: 1px solid rgba(255,255,255,0.2);
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
         
         .contact-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-color: #2e8b57;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: white;
         }
         
         .contact-icon {
@@ -145,33 +148,20 @@
             justify-content: center;
             font-size: 22px;
             color: white;
-        }
-        
-        .contact-icon.phone {
-            background: linear-gradient(135deg, #25d366 0%, #1da851 100%);
-        }
-        
-        .contact-icon.email {
-            background: linear-gradient(135deg, #ea4335 0%, #d14836 100%);
-        }
-        
-        .contact-icon.address {
-            background: linear-gradient(135deg, #4285f4 0%, #1967d2 100%);
-        }
-        
-        .contact-icon.hours {
-            background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+            background: rgba(255, 255, 255, 0.2);
         }
         
         .contact-details h3 {
-            color: #333;
+            color: white;
             margin-bottom: 5px;
             font-size: 16px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         .contact-details p {
-            color: #666;
+            color: rgba(255,255,255,0.9);
             font-size: 14px;
+            line-height: 1.5;
         }
         
         .social-grid {
@@ -181,36 +171,23 @@
         }
         
         .social-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 10px;
             padding: 20px;
             text-align: center;
-            border: 2px solid transparent;
+            border: 2px solid rgba(255,255,255,0.3);
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
             display: block;
+            backdrop-filter: blur(5px);
         }
         
         .social-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .social-card.facebook {
-            border-color: #1877f2;
-        }
-        
-        .social-card.github {
-            border-color: #333;
-        }
-        
-        .social-card.whatsapp {
-            border-color: #25d366;
-        }
-        
-        .social-card.youtube {
-            border-color: #ff0000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: white;
         }
         
         .social-icon {
@@ -218,30 +195,32 @@
             margin-bottom: 10px;
         }
         
+        /* Social Icon Original Colours */
         .social-card.facebook .social-icon {
-            color: #1877f2;
+            color: #1877f2; /* Facebook blue */
         }
         
         .social-card.github .social-icon {
-            color: #333;
+            color: #ffffff; /* GitHub white */
         }
         
         .social-card.whatsapp .social-icon {
-            color: #25d366;
+            color: #25d366; /* WhatsApp green */
         }
         
         .social-card.youtube .social-icon {
-            color: #ff0000;
+            color: #ff0000; /* YouTube red */
         }
         
         .social-card h3 {
-            color: #333;
+            color: white;
             margin-bottom: 5px;
             font-size: 16px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         .social-card p {
-            color: #666;
+            color: rgba(255,255,255,0.9);
             font-size: 13px;
         }
         
@@ -250,16 +229,19 @@
             display: flex;
             align-items: center;
             gap: 30px;
-            background: white;
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 15px;
             padding: 25px;
-            border: 1px solid #eaeaea;
+            border: 2px solid rgba(255,255,255,0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
         }
         
         .coffee-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: white;
         }
         
         .coffee-image {
@@ -268,7 +250,7 @@
             height: 200px;
             border-radius: 15px;
             overflow: hidden;
-            border: 3px solid #2e8b57;
+            border: 3px solid white;
             background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
             display: flex;
             align-items: center;
@@ -293,30 +275,31 @@
         }
         
         .coffee-text h3 {
-            color: #2e8b57;
+            color: white;
             font-size: 28px;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         .coffee-text p {
-            color: #555;
+            color: rgba(255,255,255,0.9);
             font-size: 18px;
             line-height: 1.6;
         }
         
         .author-footer {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #2e8b57 0%, #1a6d38 100%);
             padding: 20px;
             text-align: center;
-            border-top: 2px solid #eaeaea;
+            border-top: 2px solid #1a6d38;
         }
         
         .back-button {
-            background: linear-gradient(135deg, #2e8b57 0%, #1a6d38 100%);
-            color: white;
+            background: white;
+            color: #2e8b57;
             border: none;
             padding: 15px 40px;
             border-radius: 30px;
@@ -328,11 +311,13 @@
             gap: 10px;
             margin: 0 auto;
             transition: all 0.3s ease;
+            border: 2px solid white;
         }
         
         .back-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.4);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.9);
         }
     </style>
 </head>
@@ -357,7 +342,7 @@
                 <h2 class="section-title"><i class="fas fa-address-book"></i> Contact Details</h2>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon phone">
+                        <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="contact-details">
@@ -367,7 +352,7 @@
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon email">
+                        <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
@@ -377,22 +362,22 @@
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon address">
+                        <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Hobby</h3>
-                            <p>Programming is my hobby... when laziness doesn't surround me! 🦥 ,</p>
+                            <p>Programming is my hobby... when laziness doesn't surround me! 🦥</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon hours">
+                        <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-details">
                             <h3>My weekly routine</h3>
-                            <p>Saturday to Thursday: 🍔 Eat, 😴 Sleep, Work, 💻 Only free time play with Code (when not lazy), 🔄 Repeat<br>
+                            <p>Saturday to Thursday: 🍔 Eat, 😴 Sleep, Work, 💻 Code (when not lazy), 🔄 Repeat<br>
 Weekend mode: Full thug life! 💀</p>
                         </div>
                     </div>
