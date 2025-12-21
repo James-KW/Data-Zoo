@@ -185,11 +185,16 @@
     
     <script>
         // ============================================
-        // ADMIN CREDENTIALS - CHANGE THESE!
+        // ADMIN CREDENTIALS - Change these as needed!
         // ============================================
-        const ADMIN_USERNAME =[ "zoo","James","Esra","esra","james"];
-        const ADMIN_PASSWORD = "[James","Esra","esra","james"];
-        // Change the password above ^^^^^^^^^^^
+        const ADMIN_USERS = [
+            { username: "zoo", password: "James" },
+            { username: "James", password: "Esra" },
+            { username: "Esra", password: "esra" },
+            { username: "esra", password: "james" },
+            { username: "james", password: "password123" }
+        ];
+        // Add more users above ^^^^^^^^^^^
         
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -207,8 +212,13 @@
             loginBtn.disabled = true;
             loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
             
-            // Simple validation
-            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+            // Check if credentials match any user
+            const isValid = ADMIN_USERS.some(user => 
+                user.username.toLowerCase() === username.toLowerCase() && 
+                user.password === password
+            );
+            
+            if (isValid) {
                 // Create admin session
                 const session = {
                     loggedIn: true,
