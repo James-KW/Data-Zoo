@@ -185,16 +185,11 @@
     
     <script>
         // ============================================
-        // ADMIN CREDENTIALS - Change these as needed!
+        // ADMIN CREDENTIALS - ANY USERNAME WITH ANY PASSWORD
         // ============================================
-        const ADMIN_USERS = [
-            { username: "zoo", password: "James" },
-            { username: "James", password: "Esra" },
-            { username: "Esra", password: "esra" },
-            { username: "esra", password: "james" },
-            { username: "james", password: "password123" }
-        ];
-        // Add more users above ^^^^^^^^^^^
+        const VALID_USERNAMES = ["zoo", "James", "Esra", "esra", "james"];
+        const VALID_PASSWORDS = ["James", "Esra", "esra", "james"];
+        // অর্থাৎ: যেকোনো ইউজারনেম (উপরের লিস্ট থেকে) + যেকোনো পাসওয়ার্ড (নিচের লিস্ট থেকে) = লগইন
         
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -212,13 +207,16 @@
             loginBtn.disabled = true;
             loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
             
-            // Check if credentials match any user
-            const isValid = ADMIN_USERS.some(user => 
-                user.username.toLowerCase() === username.toLowerCase() && 
-                user.password === password
+            // Check if username is in valid usernames AND password is in valid passwords
+            const isUsernameValid = VALID_USERNAMES.some(validUsername => 
+                validUsername.toLowerCase() === username.toLowerCase()
             );
             
-            if (isValid) {
+            const isPasswordValid = VALID_PASSWORDS.some(validPassword => 
+                validPassword === password
+            );
+            
+            if (isUsernameValid && isPasswordValid) {
                 // Create admin session
                 const session = {
                     loggedIn: true,
@@ -257,7 +255,7 @@
                 document.getElementById('password').value = '';
                 
                 // Log failed attempt
-                console.warn('Failed admin login attempt from:', window.location.href);
+                console.warn('Failed admin login attempt:', { username, password });
             }
         });
         
