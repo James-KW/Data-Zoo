@@ -130,7 +130,7 @@ James, K.W. (2025). Data-Zoo: Chimpanzee and Monkey Behavior Dataset.
 💼 Commercial Licensing:
 
 For commercial use inquiries, please contact:
-Email: [Author's contact email]
+Email: [jamesmr283@gmail.com]
 Subject: Data-Zoo Commercial License Inquiry
 
 ⚠️ Disclaimer:
@@ -146,7 +146,7 @@ This dataset is provided "as is" without warranty of any kind. The author makes 
 
 ---
 
-📍 Last updated: December 2024
+📍 Last updated: December 2025
 🐾 Dedicated to primate research and conservation
 
 ---
